@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Lavander</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="fonts/dancingscript.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/beautiful-morning.css">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#fed5e7">
+</head>
+<body>
+    <style>
+        body {
+            background: rgb(254,213,231);
+            background-color: #FC81B855;
+            margin: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        * {
+            font-family: 'PingFang SC', 'Microsoft Yahei UI', 'Microsoft Yahei';
+        }
+        a.btn {
+            background: transparent;
+            border: none;
+            height: 40px;
+            font-size: 15px;
+            display: inline-block;
+            color: #333;
+            text-decoration: none;
+            line-height: 40px;
+        }
+        .main-title, .main-title * {
+            font-family: 'Dancing Script', 'Times New Roman', Times;
+            text-shadow:  0 0 3px #aaa, 0 0 5px #aaa !important;
+        }
+
+        .main-title { 
+            font-size: 80px; 
+            margin: 0;
+        }
+
+        a.btn:hover {
+            color: purple !important;
+            text-shadow:  0 0 12px #aaa, 0 0 5px #aaa !important;
+            border: none;
+        }
+        a {
+            text-decoration: none !important;
+            color: inherit;
+        }
+        a:hover {
+            color: purple;
+            border-bottom: 1px solid purple ;
+        }
+
+        .btnbox, .btnbox * {
+            font-family: 'Beautiful Morning', 'Times New Roman', simsun, Times;
+            font-size: 30px !important;
+            color: black !important;
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .cover {
+            background-size: cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            background-position-x: center;
+        }
+
+        .spring {
+            background-image: url('images/spring.jpg');
+        }
+        .spring.cache {
+            background-image: url('images/cache/spring.jpg');
+        }
+
+        .summer {
+            background-image: url('images/summer.jpg');
+        }
+        .summer.cache {
+            background-image: url('images/cache/summer.jpg');
+        }
+
+        .autumn {
+            background-image: url('images/autumn.jpg');
+        }
+        .autumn.cache {
+            background-image: url('images/cache/autumn.jpg');
+        }
+
+        .winter {
+            background-image: url('images/winter.jpg');
+        }
+        .winter.cache {
+            background-image: url('images/cache/winter.jpg');
+        }
+
+        .mask.spring, .mask.winter, .mask.autumn {
+            background: rgba(254,213,231,0.3);
+        }
+
+        .mask.summer {
+            background: rgba(34, 145, 53, 0.3);
+        }
+
+        .container-relative {
+            position: relative; 
+            height: 100%; 
+            width: 100%; 
+            margin: 0 0
+        }
+
+        .container .main {
+            position: absolute;
+            margin: 0;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .shadowed, .shadowed * {
+            text-shadow:  0 0 3px #ddd, 0 0 5px #ddd !important;
+        }
+
+        .shadowed2, .shadowed2 * {
+            text-shadow:  0 0 12px #ddd, 0 0 5px #ddd !important;
+        }
+
+        .footer {
+            position: fixed; left: 0; bottom: 0; text-align: center; color: #000; padding-bottom: 10px; width: 100%; font-size: 10px; padding-top: 20px; 
+            background: rgba(255,255,255, 0.15)
+        }
+    </style>
+
+    <div class="container season-rel cache cover"></div>
+    <div class="container season-rel cover"></div>
+    <div class="container season-rel mask"></div>
+    <div class="container">
+        <div class="container-relative">
+            <div class="main">
+                <h1 class="main-title" style="">
+                    <span style="color: darkred">Love</span>
+                    <span style="color: purple; margin-left: 5px;">Lavander</span>
+                </h1>
+                <div style="text-align: center; padding: 20px; margin: 100px auto; margin-bottom: 0; color: white !important" class="btnbox">
+                    <p class="beauty shadowed2"><script>
+                        var season = (function() {
+                            var now = new Date().getTime();
+                            if (now >= new Date('2021-11-5 0:00:00').getTime())  // 农历十月初一
+                                return ['粉妆玉砌，冬山如睡', 'winter'];
+                            else if (now >= new Date('2021-9-21 0:00:00').getTime())  // 中秋节
+                                return ['凉风习习，秋果累累', 'autumn'];
+                            else if (now >= new Date('2021-5-5 0:00:00').getTime()) // 立夏
+                                return ['独行幽径，夏树苍翠', 'summer'];
+                            else if (now >= new Date('2021-2-12 0:00:00').getTime())  // 春节
+                                return ['面朝大海，春暖花开', 'spring'];
+                        })();
+                        document.write(season[0]);
+                        document.querySelectorAll(".season-rel").forEach(function(e, i) { e.className +=  " " + season[1]; })
+                    </script></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="footer shadowed2">
+    &copy; 2021 Lavande
+    <p></p>
+    </div-->
+</body>
+</html>
