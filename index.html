@@ -161,13 +161,13 @@
                     <p class="beauty shadowed2"><script>
                         var season = (function() {
                             var now = new Date().getTime();
-                            if (now >= new Date('2021-11-5 0:00:00').getTime())  // 农历十月初一
+                            if (now >= new Date('2021/11/5 0:00:00').getTime())  // 农历十月初一
                                 return ['粉妆玉砌，冬山如睡', 'winter'];
-                            else if (now >= new Date('2021-9-21 0:00:00').getTime())  // 中秋节
+                            else if (now >= new Date('2021/9/21 0:00:00').getTime())  // 中秋节
                                 return ['凉风习习，秋果累累', 'autumn'];
-                            else if (now >= new Date('2021-5-5 0:00:00').getTime()) // 立夏
+                            else if (now >= new Date('2021/5/5 0:00:00').getTime()) // 立夏
                                 return ['独行幽径，夏树苍翠', 'summer'];
-                            else if (now >= new Date('2021-2-12 0:00:00').getTime())  // 春节
+                            else if (now >= new Date('2021/2/12 0:00:00').getTime())  // 春节
                                 return ['面朝大海，春暖花开', 'spring'];
                         })();
                         document.write(season[0]);
